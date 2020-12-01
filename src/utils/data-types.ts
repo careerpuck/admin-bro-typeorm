@@ -28,13 +28,13 @@ const STRING = [
   'nvarchar2', 'raw', 'binary', 'varbinary', 'string',
 
   // SimpleColumnType:
-  'simple-enum', 'smallmoney', 'money', 'tinyblob', 'tinytext', 'mediumblob', 'mediumtext',
+  'smallmoney', 'money', 'tinyblob', 'tinytext', 'mediumblob', 'mediumtext',
   'blob', 'text', 'ntext', 'citext', 'hstore', 'longblob', 'longtext', 'bytes', 'bytea',
   'long', 'raw', 'long raw', 'bfile', 'clob', 'nclob', 'image', 'timetz', 'timestamptz',
   'interval year to month', 'interval day to second', 'interval', 'year', 'point', 'line',
   'lseg', 'box', 'circle', 'path', 'polygon', 'geography', 'geometry', 'linestring',
   'multipoint', 'multilinestring', 'multipolygon', 'geometrycollection', 'int4range',
-  'int8range', 'numrange', 'tsrange', 'tstzrange', 'daterange', 'enum', 'set', 'cidr',
+  'int8range', 'numrange', 'tsrange', 'tstzrange', 'daterange', 'set', 'cidr',
   'inet', 'macaddr', 'tsvector', 'tsquery', 'uuid', 'xml', 'varbinary', 'hierarchyid',
   'sql_variant', 'rowid', 'urowid', 'uniqueidentifier', 'rowversion', 'cube',
 ]
@@ -54,10 +54,14 @@ const BOOLEAN = [
   'bit', 'bool', 'boolean', 'bit varying', 'varbit',
 ]
 
-// const ARRAY = [
-//     // SimpleColumnType:
-//     "simple-array", "array"
-// ];
+const ARRAY = [
+  // SimpleColumnType:
+  "simple-array", "array"
+];
+
+// const ENUM = [
+//     "enum", "simple-enum"
+// ]
 
 const OBJECT = [
   // SimpleColumnType:
@@ -74,7 +78,7 @@ extend(NUMBER, 'number')
 extend(STRING, 'string')
 extend(DATE, 'datetime')
 extend(BOOLEAN, 'boolean')
-// extend(ARRAY, "array");
+extend(ARRAY, 'array' as any);
 extend(OBJECT, 'mixed')
 
 export { DATA_TYPES }

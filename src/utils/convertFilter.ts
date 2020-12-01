@@ -17,7 +17,7 @@ export function convertFilter(filter?: Filter): FindConditions<BaseEntity> {
   const where = {}
   for (const n in filters) {
     const one = filters[n]
-    if (['boolean', 'number', 'float', 'object', 'array'].includes(one.property.type())) {
+    if (['boolean', 'number', 'float', 'object', 'array', 'reference', 'mixed'].includes(one.property.type())) {
       where[n] = safeParseJSON(one.value as string)
     } else if (['date', 'datetime'].includes(one.property.type())) {
       if (typeof one.value !== 'string' && one.value.from && one.value.to) where[n] = Between(new Date(one.value.from), new Date(one.value.to))
