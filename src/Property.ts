@@ -35,10 +35,10 @@ export class Property extends BaseProperty {
     return null
   }
 
-   public position(): number {
+  public position(): number {
     return this.columnPosition || 0
   }
- 
+
   public availableValues(): Array<any> | null {
     const values = this.column.enum
     if (values) { return values.map((val) => val.toString()) }
@@ -47,7 +47,7 @@ export class Property extends BaseProperty {
 
   public isArray(): boolean {
     // console.log("isArray(): ", this.column.type)
-    return (this.column.isArray || this.column.type == "simple-array" || this.column.type == "array");        
+    return (this.column.isArray || this.column.type === 'simple-array' || this.column.type === 'array')
   }
 
   public type(): PropertyType {

@@ -56,8 +56,8 @@ const BOOLEAN = [
 
 const ARRAY = [
   // SimpleColumnType:
-  "simple-array", "array"
-];
+  'simple-array', 'array',
+]
 
 // const ENUM = [
 //     "enum", "simple-enum"
@@ -78,7 +78,7 @@ extend(NUMBER, 'number')
 extend(STRING, 'string')
 extend(DATE, 'datetime')
 extend(BOOLEAN, 'boolean')
-extend(ARRAY, 'array' as any);
+extend(ARRAY, 'array' as any)
 extend(OBJECT, 'mixed')
 
 export { DATA_TYPES }
