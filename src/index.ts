@@ -123,3 +123,4 @@
 export * from './Database'
 export * from './Resource'
 export * from './ComputedColumn'
+export * from './ExtendedRecord'
