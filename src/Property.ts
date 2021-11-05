@@ -62,7 +62,8 @@ export class Property extends BaseProperty {
 
     if (this.reference()) { type = 'reference' }
 
-    if (!type) { console.warn(`Unhandled type: ${this.column.type}`) }
+    // hack to avoid warnings about enum column type
+    if (!type && this.column.type !== 'enum') { console.warn(`Unhandled type: ${this.column.type}`) }
 
     return type
   }
