@@ -143,15 +143,15 @@ export class Resource extends BaseResource {
       const p = property.name()
       if (property && (property.isArray() || (property.type() as any) === 'array')) {
         const arr = [] as any
-        for (const k in params) {
-          const v = params[k]
+        for (const k in preparedParams) {
+          const v = preparedParams[k]
           if (k.startsWith(p)) {
             const i = parseFloat(k.replace(`${p}.`, ''))
             arr[i] = v
-            delete params[k]
+            delete preparedParams[k]
           }
         }
-        params[p] = arr
+        preparedParams[p] = arr
       }
     })
 
